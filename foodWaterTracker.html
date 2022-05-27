@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myfood" ng-controller="ctrldetails">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html" />
+
+	<title>food water Tracker</title>
+
+	<link href="/css/app.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="/main">
+          <span class="align-middle">DigitalDiary</span>
+        </a>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Pages
+					</li>
+
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="/index">
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+            </a>
+					</li>
+
+					<!-- <li class="sidebar-item">
+						<a class="sidebar-link" href="/profile">
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+            </a>
+					</li> -->
+
+				
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="/deardiary">
+              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Dear Diary</span>
+            </a>
+					</li>
+
+					<li class="sidebar-header">
+						Advanced Tracker
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="/expenses">
+              <i class="align-middle" data-feather="square"></i> <span class="align-middle">Spendings</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="/foodwater">
+              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Food/Water</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="/sleep">
+              <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Sleep</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="/exercise">
+              <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Exercise</span>
+            </a>
+					</li>
+
+					
+				
+
+					<li class="sidebar-header">
+						Scheduler 
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="dist/index.html">
+              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Planner</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+              <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Medicine</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Recurrings</span>
+            </a>
+					</li>
+				</ul>
+
+				
+			</div>
+		</nav>
+
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle js-sidebar-toggle">
+          <i class="hamburger align-self-center"></i>
+        </a>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+								<!-- <div class="position-relative">
+									<i class="align-middle" data-feather="bell"></i>
+									<span class="indicator">4</span>
+								</div> -->
+							</a>
+							<!-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
+								<div class="dropdown-menu-header">
+									4 New Notifications
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-danger" data-feather="alert-circle"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Update completed</div>
+												<div class="text-muted small mt-1">Restart to complete the update.</div>
+												<div class="text-muted small mt-1">30m ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-warning" data-feather="bell"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Drink Water</div>
+												<div class="text-muted small mt-1">Remember to Stay Hydrated :)</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-primary" data-feather="home"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Believe in yourself</div>
+												<div class="text-dark">you are doing great!!</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										 <div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-success" data-feather="user-plus"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">New connection</div>
+												<div class="text-muted small mt-1">Christina accepted your request.</div>
+												<div class="text-muted small mt-1">14h ago</div>
+											</div>
+										</div> 
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all notifications</a>
+								</div>
+							</div> -->
+						</li>
+						<!-- <li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="message-square"></i>
+								</div>
+							</a>
+							
+						</li> -->
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                <i class="align-middle" data-feather="settings"></i>
+              </a>
+
+							<!-- <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+              </a> -->
+							<!-- <div class="dropdown-menu dropdown-menu-end">
+								<a class="dropdown-item" href="/profile"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/index"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="mainPage.html">Log out</a>
+							</div> -->
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<h1 class="h3 mb-3">You are what you eat, so don’t be fast, cheap, easy, or fake.</h1>
+					<form  action="/addfoodWater" method="post">
+					<div class="row"  style="width: 70%;">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+
+									<h5 class="card-title mb-0">Enter the total glasses of water you had today </h5>									
+									<div class="card-body" style="width: 20%;">
+										<input type="number" class="form-control" placeholder="ex. 10" name="water">
+									</div>
+
+									<h5 class="card-title mb-0">How many meals did u have today </h5>
+									<div class="card-body" style="width: 20%;">
+										<input type="number" class="form-control" placeholder="ex. 5" name="food">
+									</div>
+
+									<h5 class="card-title mb-0">How many snack breaks did u have today</h5>
+									<div class="card-body" style="width: 20%;">
+										<input type="number" class="form-control" placeholder="ex. 5" name="snack">
+									</div>
+
+									
+									<h5 class="card-title mb-0">How would you categorise the quality of the food you had today</h5>		
+
+									<div class="card-body">
+										<div>
+											<label class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" name="Category" value="Healthy">
+											<span class="form-check-label">
+											Healthy
+											</span>
+										</label>
+																		<label class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" name="Category" value="Comfort">
+											<span class="form-check-label">
+											Comfort
+											</span>
+										</label>
+								
+										<label class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" name="Category" value="Not Junk">
+											<span class="form-check-label">
+											Not Junk
+											</span>
+										</label>
+											
+										<label class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" name="Category" value="Junk">
+											<span class="form-check-label">
+											Junk
+											</span>
+										</label>								
+												
+										</div>
+										
+									</div>
+
+
+								</div>
+																
+
+								<div class="text-center mt-3">
+									<button type="submit" class="btn btn-lg btn-primary">POST</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+				<div class="row" style="width: 204%;">
+					<div class="col-12 col-lg-6">
+						<div class="card flex-fill">
+							<div class="card-header">
+	
+								<h5 class="card-title mb-0" >Your recent water and food intake</h5>
+							</div>
+							<table class="table table-hover my-0">
+								<thead>
+									<tr>
+									   
+										<th >Date</th>
+										<th >Day</th>
+										<th >Water content</th>
+										<th >Number of Meals</th>	
+										<th >Snack breaks</th>	
+										<th >category</th>	
+
+										
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="item in table">
+										<td>{{item.date}}</td>
+										<td>{{item.day}}</td>
+										<td>{{item.water}}</td>
+										<td>{{item.meals}}</td>
+										<td>{{item.snack}}</td>
+										<td>{{item.category}}</td>
+	
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+
+				</div>
+			</main>
+
+			<footer class="footer">
+				
+			</footer>
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+	<script src="/ar2.js"></script>
+
+</body>
+
+</html>
